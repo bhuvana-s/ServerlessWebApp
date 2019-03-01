@@ -1,0 +1,15 @@
+*ReadMe*
+
+Steps to setup Serverless WebApplication using API Gateway & Lambda
+
+1. Create LambdaFunction with content from BasicLambda.py code, create a new role with `Simple Micro Services` permission and add API Gateway Trigger
+2. Create & Configure API Gateway GET Method to invoke BasicLambda.py
+3. Create S3 Bucket, make its objects public, convert it to a static website.
+4. upload error.html & index.html to S3 bucket created in #3, make these objects public
+5. Launch the S3 Static Website URL to see the web application is working
+6. Copy StopRunningInstances.py code to replace existing Lambda Function
+7. Add `AmazonEC2FullAccess` Lambda Execute Role created in #1
+8. Create one or more EC2 instances with tag name `AutoOff` with the value `yes` (case sensitive)
+9. Launch the S3 Static Website URL to test the running EC2 instances with the tag AutoOff=yes are shutdown.
+
+<end of demo>

@@ -1,0 +1,30 @@
+<html>
+<script>
+
+function myFunction() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("my-demo").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "ENTER-YOUR-API-GATEWAY-LINK-HERE", true);
+    xhttp.send();
+
+}
+
+</script>
+<body><div align="center"><br><br><br><br>
+<h1>Welcome to Serverless Architecture Demo!</h1>
+<br>
+<h2> Building a Serverless Webpage using API Gateway & AWS Lambda </h2>
+<br>
+<br>
+<span id="my-demo">To proceed...</span>
+
+<br><br>
+<button onclick="myFunction()">Click here</button><br>
+
+</div>
+</body>
+</html>
